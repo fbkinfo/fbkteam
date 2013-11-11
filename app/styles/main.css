@@ -78,6 +78,14 @@ body {
     text-transform: uppercase;
     font-size: 13px;
 }
+.b-share-block {
+    padding-top: 20px;
+}
+.b-share-block__message {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 /*  */
 .b-links {
     list-style: none;

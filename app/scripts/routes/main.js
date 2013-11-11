@@ -2,13 +2,14 @@
 
 define([
     'jquery',
+    'underscore',
     'backbone',
     'module',
     'directions-repository',
     'views/index',
     'views/form'
     
-], function ($, Backbone, module, repo, IndexView, FormView) {
+], function ($, _, Backbone, module, repo, IndexView, FormView) {
     'use strict';
     
     var container = $(module.config().container);

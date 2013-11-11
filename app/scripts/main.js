@@ -18,14 +18,15 @@ require.config({
         jquery: '../vendors/jquery/jquery',
         backbone: '../vendors/backbone/backbone',
         underscore: '../vendors/underscore/underscore',
-        tpl: '../vendors/requirejs-tpl/tpl'
+        text: '../vendors/requirejs-text/text',
+        tpl: '../vendors/requirejs-tpl/tpl',
+        json: '../vendors/requirejs-plugins/src/json'
     }
 });
 
 require([
     'backbone', 'routes/main'
 ], function (Backbone, Router) {
-    var router = new Router();
-
+    new Router();
     Backbone.history.start();
 });
