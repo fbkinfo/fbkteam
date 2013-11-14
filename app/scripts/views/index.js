@@ -14,8 +14,8 @@ define([
         className: 'row',
         events: {
             'click .j-direction-link' : 'showDirectionInfo',
-            //'mouseover .j-direction-link' : 'onOverDirectionLink',
-            //'mouseleave .j-direction-link' : 'onLeaveDirectionLink',
+            'mouseover .j-direction-link' : 'onOverDirectionLink',
+            'mouseleave .j-direction-link' : 'onLeaveDirectionLink',
             'click .j-ready-button' : 'onClickReadyButton'
         },
         
