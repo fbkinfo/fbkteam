@@ -1,0 +1,1 @@
+../../../app/scripts/config/jsdirections_prod.js
