@@ -105,6 +105,13 @@ body {
 .b-links__item-link:hover {
     text-decoration: none;
 }
+.b-links__item-link:active, .b-links__item-link:focus {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    outline-offset: 0;
+}
 .b-links__item-description {
     margin-top: 10px;
     font-size: 14px;
@@ -113,8 +120,27 @@ body {
 .b-links__item-text {
 }
 .b-button-ready {
+    color: #fff;
     float: right;
 }
+.b-button-ready:hover {
+    color: #fff;
+}
+.b-content {
+    min-height: 400px;
+}
+.b-prealoader {
+    height: 200px;
+    text-align: center;
+}
+.b-share-block__buttons {
+    padding-top: 10px; 
+}
+.pluso {
+    display: block !important;
+    text-align: center !important;
+}
+
 /* colors */
 .b-block-blue {
     background-color: #30abeb;
@@ -128,7 +154,35 @@ body {
 .b-block-red {
     background-color: #fa3c3c;
 }
-
+/* buttons  */
+.b-button-blue {
+    background-color: #30abeb;
+    border-color: #27a8e8;
+}
+.b-button-blue:hover {
+    background-color: #26a7e7;
+}
+.b-button-green {
+    background-color: #0b9635;
+    border-color: #089231;
+}
+.b-button-green:hover {
+    background-color: #079130;
+}
+.b-button-orange {
+    background-color: #fa883c;
+    border-color: #f88539;
+}
+.b-button-orange:hover {
+    background-color: #f78438;
+}
+.b-button-red {
+    background-color: #fa3c3c;
+    border-color: #f73939;
+}
+.b-button-red:hover {
+    background-color: #f63838;
+}
 .b-link-blue:hover {
     color: #30abeb;
 }
@@ -141,6 +195,11 @@ body {
 .b-link-red:hover {
     color: #fa3c3c;
 }
+@media (min-width: 767px) {
+    .b-links__item {
+        min-height: 130px;
+    }
+}
 
 /*  */
 @media (max-width: 979px) {
@@ -148,6 +207,7 @@ body {
         font-size: 48px;
     }
     .b-links__item {
+        min-height: 30px;
     }
     .b-links__item-description {
         font-size: 12px;

@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-contrib-symlink');
 
     // configurable paths
     var yeomanConfig = {
@@ -126,7 +127,7 @@ module.exports = function (grunt) {
                     baseUrl: '<%= yeoman.app %>/scripts',
                     optimize: 'none',
                     paths: {
-//                        'templates': '../../.tmp/scripts/templates'
+                        'config/jsdirections': '../../dist/scripts/config/jsdirections'
                     },
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
@@ -206,10 +207,15 @@ module.exports = function (grunt) {
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/{,*/}*.*',
-                        'data/*'
+                        'styles/fonts/{,*/}*.*'
                     ]
                 }]
+            }
+        },
+        symlink: {
+            explicit: {
+                src: '<%= yeoman.app %>/scripts/config/jsdirections_prod.js',
+                dest: '<%= yeoman.dist %>/scripts/config/jsdirections.js'
             }
         },
         bower: {
@@ -260,6 +266,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
+        'symlink',
         'requirejs',
         'imagemin',
         'htmlmin',

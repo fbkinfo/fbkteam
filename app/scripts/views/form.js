@@ -4,16 +4,15 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'module'
+    'module',
+    'jquery.writeCapture'
 ], function ($, _, Backbone, module) {
     'use strict';
     
     var MainView = Backbone.View.extend({
         
-        formsContainer: null,
-        activeElement: null,
-        
-        
+        preloader: $('<div/>').css('display', 'none').appendTo('body'),
+
         events: {
         },
         
@@ -21,23 +20,25 @@ define([
             this.formsContainer = $(module.config()['forms-container']);
         },
 
-        getFormElement: function(item) {
-            return this.formsContainer.find('.j-form-' + item.formId);
-        },
-
         showForm: function(item) {
-            if (!_.isNull(this.activeElement)) {
-                this.formsContainer.append(this.activeElement);
-            }
-            
-            var formElement = this.getFormElement(item);
-            this.activeElement = formElement;
-            this.$el.append(formElement);
+            var _this = this;
+            /*jshint multistr: true */
+            $.writeCapture.autoAsync();
+            this.preloader.writeCapture().html('\
+                <script src="'+item.formUrl+'"></script>\n\
+                <script type="text/javascript">\n\
+                    _podioWebForm.render("'+item.formId+'")\n\
+                </script>',
+                function() {
+                    //_this.$el.find('.prealoader').fadeOut();
+                    _this.$el.html(_this.preloader.children());
+                }
+            );
         },
 
         render: function() {
             if (!_.isObject(this.options.item)) {
-                throw new Error('Dirction item is missing');
+                throw new Error('Dirеction item is missing');
             }
 
             this.showForm(this.options.item);

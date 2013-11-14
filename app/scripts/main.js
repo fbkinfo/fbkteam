@@ -12,6 +12,9 @@ require.config({
                 'jquery'
             ],
             exports: 'Backbone'
+        },
+        'jquery.writeCapture': {
+            deps: ['writeCapture']
         }
     },
     paths: {
@@ -20,7 +23,10 @@ require.config({
         underscore: '../vendors/underscore/underscore',
         text: '../vendors/requirejs-text/text',
         tpl: '../vendors/requirejs-tpl/tpl',
-        json: '../vendors/requirejs-plugins/src/json'
+        json: '../vendors/requirejs-plugins/src/json',
+        'element.write': '../vendors/element.write/element.write',
+        writeCapture: '../vendors/writeCapture/writeCapture',
+        'jquery.writeCapture': '../vendors/writeCapture/plugin/jquery.writeCapture'
     }
 });
 

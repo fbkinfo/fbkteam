@@ -1,10 +1,12 @@
 [
     {
         "title"         : "Дизайн",
-        "description"   : "Действительно, лирический субъект нивелирует орнаментальный сказ, хотя по данному примеру нельзя судить об авторских оценках.",
+        "description"   : "Действительно devs, лирический субъект нивелирует орнаментальный сказ, хотя по данному примеру нельзя судить об авторских оценках.",
         "code"          : "design",
         "class"         : "b-link-blue",
         "blocksClass"   : "b-block-blue",
+        "buttonClass"   : "b-button-blue",
+        "formUrl"       : "https://podio.com/webforms/6065551/472632.js",
         "formId"        : "472632"
     },
     {
@@ -13,6 +15,8 @@
         "code"          : "development",
         "class"         : "b-link-green",
         "blocksClass"   : "b-block-green",
+        "buttonClass"   : "b-button-green",
+        "formUrl"       : "https://podio.com/webforms/6065942/472680.js",
         "formId"        : "472680"
     },
     {
@@ -21,14 +25,18 @@
         "code"          : "sociology",
         "class"         : "b-link-orange",
         "blocksClass"   : "b-block-orange",
+        "buttonClass"   : "b-button-orange",
+        "formUrl"       : "https://podio.com/webforms/6065551/472632.js",
         "formId"        : "472632"
     },
     {
         "title"         : "Контент",
-        "description"   : "Особую ценность, на наш взгляд, представляет синтагма просветляет композиционный анализ, туда же попадает и еще недавно вызывавший безусловную симпатию гетевский Вертер.",
+        "description"   : "Особую ценность, на наш взгляд, представляет синтагма просветляет композиционный анализ, туда же попадает и еще недавно Вертер.",
         "code"          : "content",
         "class"         : "b-link-red",
         "blocksClass"   : "b-block-red",
+        "buttonClass"   : "b-button-red",
+        "formUrl"       : "https://podio.com/webforms/6065942/472680.js",
         "formId"        : "472680"
     }
 ]

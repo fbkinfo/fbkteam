@@ -6,7 +6,7 @@
         </a>
         <div class="b-links__item-description j-direction-description">
             <span class="b-links__item-text col-md-8"><%=directionItem.description%></span>
-            <a class="b-button-ready btn btn-primary btn-lg col-md-4 col-sm-4 j-ready-button" href="/#form/<%=directionItem.code%>">Готов помочь</a>
+            <a class="b-button-ready btn btn-lg col-md-4 col-sm-4 j-ready-button <%=directionItem.buttonClass%>" href="/#form/<%=directionItem.code%>">Готов помочь</a>
         </div>
     </li>
     <% }); %>

@@ -26,7 +26,6 @@ define([
     
         formAction: function(code) {
             var item = repo.getByCode(code);
-
             if (!_.isObject(item)) {
                 this.indexAction();
             } else {

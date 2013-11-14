@@ -1,5 +1,5 @@
 /*global define*/
-define(['jquery', 'module', 'json!../data/directions.json'], function($, module, data) {
+define(['jquery', 'module', 'config/jsdirections' /* 'json!config/directions.json'*/], function($, module, data) {
     'use strict';
     
     return {

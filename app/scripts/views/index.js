@@ -14,12 +14,14 @@ define([
         className: 'row',
         events: {
             'click .j-direction-link' : 'showDirectionInfo',
-            'mouseover .j-direction-link' : 'onOverDirectionLink',
-            'mouseleave .j-direction-link' : 'onLeaveDirectionLink',
+            //'mouseover .j-direction-link' : 'onOverDirectionLink',
+            //'mouseleave .j-direction-link' : 'onLeaveDirectionLink',
             'click .j-ready-button' : 'onClickReadyButton'
         },
         
         coloredBlockClass : 'j-colored-block',
+        
+        selectedClass: null,
 
         showDirectionInfo: function(event) {
             this.hideAllDescriptions();
@@ -29,6 +31,14 @@ define([
                 .closest('.j-direction-block')
                 .find('.j-direction-description')
                 .show()
+            ;
+            
+            var item = repo.getByCode($(event.currentTarget).data('direction'));
+            
+            this.selectedClass = item.blocksClass;
+            $('.' + this.coloredBlockClass)
+                .removeClass(this.getAllColorClasses())
+                .addClass(this.coloredBlockClass + ' ' +item.blocksClass)
             ;
                 
             return false;
@@ -49,15 +59,23 @@ define([
         onOverDirectionLink: function(event) {
             var item = repo.getByCode($(event.currentTarget).data('direction'));
 
-            this.onLeaveDirectionLink()
+            $('.' + this.coloredBlockClass)
+                .removeClass(this.getAllColorClasses())
                 .addClass(this.coloredBlockClass + ' ' +item.blocksClass)
             ;
         },
 
         onLeaveDirectionLink: function() {
-            return $('.' + this.coloredBlockClass)
+            
+            var colorsBlocks = $('.' + this.coloredBlockClass)
                 .removeClass(this.getAllColorClasses())
             ;
+            
+            if (!_.isNull(this.selectedClass)) {
+                colorsBlocks.addClass(this.selectedClass);
+            }
+
+            return false;
         },
 
         render: function() {
