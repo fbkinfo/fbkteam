@@ -16,6 +16,7 @@ body {
 .b-header-line {
     height: 20px;
     background-color: #acb0b2;
+    transition: all 200ms ease-in;
 }
 .b-header {
     width: 100%;
@@ -28,6 +29,7 @@ body {
 .b-footer {
     min-height: 170px;
     background-color: #acb0b2;
+    transition: all 200ms ease-in;
 }
 .b-footer-content {
     padding-top: 10px;
@@ -101,6 +103,7 @@ body {
 }
 .b-links__item-link {
      color: #222;
+     transition: all 100ms ease-in;
 }
 .b-links__item-link:hover {
     text-decoration: none;
