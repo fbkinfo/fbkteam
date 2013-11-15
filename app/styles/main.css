@@ -16,7 +16,7 @@ body {
 .b-header-line {
     height: 20px;
     background-color: #acb0b2;
-    transition: all 200ms ease-in;
+    transition: all 200ms ease-out;
 }
 .b-header {
     width: 100%;
@@ -29,7 +29,7 @@ body {
 .b-footer {
     min-height: 170px;
     background-color: #acb0b2;
-    transition: all 200ms ease-in;
+    transition: all 200ms ease-out;
 }
 .b-footer-content {
     padding-top: 10px;
@@ -104,7 +104,7 @@ body {
 }
 .b-links__item-link {
      color: #222;
-     transition: all 100ms linear;
+     transition: all 100ms ease-out;
      position: absolute;
      cursor: pointer;
 }
