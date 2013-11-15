@@ -22,20 +22,22 @@ define([
         coloredBlockClass : 'j-colored-block',
         
         selectedClass: null,
+        
+        activeClassName: 'b-links__item-link-active',
 
         showDirectionInfo: function(event) {
             this.hideAllDescriptions();
-
             $(event.currentTarget)
-                .hide()
+                .addClass(this.activeClassName)
                 .closest('.j-direction-block')
                 .find('.j-direction-description')
-                .show()
+                .css('visibility', 'visible')
             ;
             
             var item = repo.getByCode($(event.currentTarget).data('direction'));
-            
+
             this.selectedClass = item.blocksClass;
+            
             $('.' + this.coloredBlockClass)
                 .removeClass(this.getAllColorClasses())
                 .addClass(this.coloredBlockClass + ' ' +item.blocksClass)
@@ -45,8 +47,8 @@ define([
         },
 
         hideAllDescriptions: function() {
-            $('.j-direction-description').hide();
-            $('.j-direction-link').show();
+            $('.j-direction-description').css('visibility', 'hidden');
+            $('.j-direction-link').removeClass(this.activeClassName);
         },
 
         getAllColorClasses: function() {
@@ -57,8 +59,13 @@ define([
         },
 
         onOverDirectionLink: function(event) {
-            var item = repo.getByCode($(event.currentTarget).data('direction'));
+            var currentElement = $(event.currentTarget);
+            if (currentElement.hasClass(this.activeClassName)) {
+                return;
+            }
 
+            var item = repo.getByCode(currentElement.data('direction'));
+            
             $('.' + this.coloredBlockClass)
                 .removeClass(this.getAllColorClasses())
                 .addClass(this.coloredBlockClass + ' ' +item.blocksClass)
@@ -66,6 +73,10 @@ define([
         },
 
         onLeaveDirectionLink: function() {
+            var currentElement = $(event.currentTarget);
+            if (currentElement.hasClass(this.activeClassName)) {
+                return;
+            }
             
             var colorsBlocks = $('.' + this.coloredBlockClass)
                 .removeClass(this.getAllColorClasses())

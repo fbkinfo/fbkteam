@@ -100,10 +100,25 @@ body {
     margin: 0;
     padding: 0;
     display: block;
+    position: relative;
 }
 .b-links__item-link {
      color: #222;
-     transition: all 100ms ease-in;
+     transition: all 100ms linear;
+     position: absolute;
+     cursor: pointer;
+}
+.b-links__item-link-active {
+    opacity: 0.09;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.b-links__item .b-links__item-link-active:hover {
+    color: #222;
 }
 .b-links__item-link:hover {
     text-decoration: none;
@@ -118,7 +133,8 @@ body {
 .b-links__item-description {
     margin-top: 10px;
     font-size: 14px;
-    display: none;
+    visibility: hidden;
+    position: absolute;
 }
 .b-links__item-text {
     text-transform: none;
@@ -139,6 +155,7 @@ body {
 }
 .b-share-block__buttons {
     padding-top: 10px; 
+    text-align: center;
 }
 .pluso {
     display: block !important;

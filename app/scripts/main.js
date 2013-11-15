@@ -21,17 +21,18 @@ require.config({
         jquery: '../vendors/jquery/jquery',
         backbone: '../vendors/backbone/backbone',
         underscore: '../vendors/underscore/underscore',
-        text: '../vendors/requirejs-text/text',
         tpl: '../vendors/requirejs-tpl/tpl',
-        json: '../vendors/requirejs-plugins/src/json',
         writeCapture: '../vendors/writeCapture/writeCapture',
         'jquery.writeCapture': '../vendors/writeCapture/plugin/jquery.writeCapture',
-        'directions': '/scripts/config/directions.json?noext'
-    }
+        'social-likes': '../vendors/social-likes/social-likes.min'
+    },
+    packages: [
+        'social-likes'
+    ]
 });
 
 require([
-    'jquery', 'backbone', 'routes/main', 'directions-repository',
+    'jquery', 'backbone', 'routes/main', 'directions-repository', 'social-likes'
 ], function ($, Backbone, Router, repository) {
     $.getJSON('config/directions.json', null, function(data) {
         repository.setData(data);
