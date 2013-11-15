@@ -121,6 +121,7 @@ body {
     display: none;
 }
 .b-links__item-text {
+    text-transform: none;
 }
 .b-button-ready {
     color: #fff;

@@ -24,15 +24,18 @@ require.config({
         text: '../vendors/requirejs-text/text',
         tpl: '../vendors/requirejs-tpl/tpl',
         json: '../vendors/requirejs-plugins/src/json',
-        'element.write': '../vendors/element.write/element.write',
         writeCapture: '../vendors/writeCapture/writeCapture',
-        'jquery.writeCapture': '../vendors/writeCapture/plugin/jquery.writeCapture'
+        'jquery.writeCapture': '../vendors/writeCapture/plugin/jquery.writeCapture',
+        'directions': '/scripts/config/directions.json?noext'
     }
 });
 
 require([
-    'backbone', 'routes/main'
-], function (Backbone, Router) {
-    new Router();
-    Backbone.history.start();
+    'jquery', 'backbone', 'routes/main', 'directions-repository',
+], function ($, Backbone, Router, repository) {
+    $.getJSON('config/directions.json', null, function(data) {
+        repository.setData(data);
+        new Router();
+        Backbone.history.start();
+    });
 });

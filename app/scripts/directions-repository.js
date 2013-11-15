@@ -1,8 +1,15 @@
 /*global define*/
-define(['jquery', 'module', 'config/jsdirections' /* 'json!config/directions.json'*/], function($, module, data) {
+define([], function() {
     'use strict';
     
+    var data = [];
+    
     return {
+        
+        setData: function(directionsData) {
+            data = directionsData;
+        },
+
         getAll: function() {
             return data;
         },
