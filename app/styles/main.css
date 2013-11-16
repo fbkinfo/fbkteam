@@ -100,14 +100,14 @@ body {
 }
 .b-header-info {
     display: block;
-    margin: 40px 0 0 10px;
+    margin: 40px 0 0 0px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 13px;
 }
 .b-form-container {
     margin: 0 auto;
-    width: 660px;
+    width: 682px;
 }
 .b-share-block {
     padding-top: 20px;
