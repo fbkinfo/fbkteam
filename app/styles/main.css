@@ -109,7 +109,7 @@ body {
      cursor: pointer;
 }
 .b-links__item-link-active {
-    opacity: 0.09;
+    opacity: 0.08;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -131,10 +131,8 @@ body {
     outline-offset: 0;
 }
 .b-links__item-description {
-    margin-top: 10px;
     font-size: 14px;
-    visibility: hidden;
-    position: absolute;
+    display: none;
 }
 .b-links__item-text {
     text-transform: none;
@@ -220,6 +218,13 @@ body {
     .b-links__item {
         min-height: 130px;
     }
+    .b-links__item-link {
+        min-height: 130px;
+    }
+    .b-links__item-description {
+        min-height: 98px;
+        padding-top: 32px;
+    }
 }
 
 /*  */
@@ -228,7 +233,7 @@ body {
         font-size: 48px;
     }
     .b-links__item {
-        min-height: 30px;
+        min-height: 48px;
     }
     .b-links__item-description {
         font-size: 12px;

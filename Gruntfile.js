@@ -157,7 +157,7 @@ module.exports = function (grunt) {
                 files: {
                     '<%= yeoman.dist %>/styles/main.css': [
                         '<%= yeoman.app %>/vendors/bootstrap/dist/css/bootstrap.min.css',
-                        '.tmp/styles/{,*/}*.css',
+                        '<%= yeoman.app %>/vendors/social-likes/social-likes.css',
                         '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
                 }

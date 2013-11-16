@@ -13,7 +13,7 @@ define([
         template: template,
         className: 'row',
         events: {
-            'click .j-direction-link' : 'showDirectionInfo',
+            //'click .j-direction-link' : 'showDirectionInfo',
             'mouseover .j-direction-link' : 'onOverDirectionLink',
             'mouseleave .j-direction-link' : 'onLeaveDirectionLink',
             'click .j-ready-button' : 'onClickReadyButton'
@@ -25,17 +25,19 @@ define([
         
         activeClassName: 'b-links__item-link-active',
 
-        showDirectionInfo: function(event) {
+        getItemBlock: function(item) {
+            return this.$el.find('.' + item.class);
+        },
+
+        showDirectionInfo: function(item) {
             this.hideAllDescriptions();
-            $(event.currentTarget)
+            this.getItemBlock(item)
                 .addClass(this.activeClassName)
                 .closest('.j-direction-block')
                 .find('.j-direction-description')
-                .css('visibility', 'visible')
+                .show()
             ;
             
-            var item = repo.getByCode($(event.currentTarget).data('direction'));
-
             this.selectedClass = item.blocksClass;
             
             $('.' + this.coloredBlockClass)
@@ -47,7 +49,7 @@ define([
         },
 
         hideAllDescriptions: function() {
-            $('.j-direction-description').css('visibility', 'hidden');
+            $('.j-direction-description').hide();
             $('.j-direction-link').removeClass(this.activeClassName);
         },
 
@@ -91,6 +93,10 @@ define([
 
         render: function() {
             this.$el.html(template({directions: repo.getAll()}));
+
+            if (_.isObject(this.options.item)) {
+                this.showDirectionInfo(this.options.item);
+            }
 
             return this;
         }

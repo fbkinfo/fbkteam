@@ -16,12 +16,15 @@ define([
     
     var MainRouter = Backbone.Router.extend({
         routes: {
+            'show/:code': 'showAction',
             'form/:code': 'formAction',
             '*path' : 'indexAction'
         },
         
-        indexAction: function() {
-            this.render(new IndexView());
+        indexAction: function(item) {
+            this.render(new IndexView({
+                item: item
+            }));
         },
     
         formAction: function(code) {
@@ -33,6 +36,10 @@ define([
                     item : item
                 }));
             }
+        },
+        
+        showAction: function(code) {
+            this.indexAction(repo.getByCode(code));
         },
     
         render: function(view) {
