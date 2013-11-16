@@ -91,7 +91,7 @@ define([
         },
 
         onClickReadyButton: function() {
-             window.scrollTo(0, this.$el.parent().offset().top);
+            window.scrollTo(0, this.$el.parent().offset().top);
         },
 
         render: function() {

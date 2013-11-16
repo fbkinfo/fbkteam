@@ -4,9 +4,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'module',
     'jquery.writeCapture'
-], function ($, _, Backbone, module) {
+], function ($, _, Backbone) {
     'use strict';
     
     var MainView = Backbone.View.extend({
@@ -15,12 +14,6 @@ define([
 
         className: 'b-form-container',
         
-        events: {
-        },
-        
-        initialize: function() {
-        },
-
         showForm: function(item) {
             var _this = this;
             /*jshint multistr: true */
@@ -31,7 +24,6 @@ define([
                     _podioWebForm.render("'+item.formId+'")\n\
                 </script>',
                 function() {
-                    //_this.$el.find('.prealoader').fadeOut();
                     _this.$el.html(_this.preloader.children());
                 }
             );
