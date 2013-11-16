@@ -1,5 +1,21 @@
+@font-face {
+    font-family: 'red_ring';
+    src: url("fonts/redring-regular-webfont.eot");
+    src: url("fonts/redring-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/redring-regular-webfont.woff") format("woff"), url("fonts/redring-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'red_ring';
+    src: url("fonts/redring-medium-webfont.eot");
+    src: url("fonts/redring-medium-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/redring-medium-webfont.woff") format("woff"), url("fonts/redring-medium-webfont.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
 body, html {
-    font-family: "Arial", sans-serif;
+    font-family: "red_ring", sans-serif;
     height: 100%;
 }
 body {
@@ -8,7 +24,7 @@ body {
 .b-container {
     position: relative;
     min-height:100%;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
 }
 .b-header {
     height: 160px;
@@ -22,17 +38,17 @@ body {
     width: 100%;
 }
 .b-footer-container {
-    margin-top:-170px;
-    height: 170px;
+    margin-top:-240px;
+    height: 240px;
     bottom: 0px;
 }
 .b-footer {
-    min-height: 170px;
+    min-height: 240px;
     background-color: #acb0b2;
     transition: all 200ms ease-out;
 }
 .b-footer-content {
-    padding-top: 10px;
+    padding-top: 30px;
     padding-left: 30px;
     color: #fff;
     font-size: 12px;
@@ -46,7 +62,7 @@ body {
 }
 .b-header-logo {
     float: left;
-    width: 240px;
+    width: 232px;
     position: relative;
 }
 .b-header-logo__bracket {
@@ -75,13 +91,18 @@ body {
 }
 .b-header-info {
     display: block;
-    margin: 40px 0 0 0px;
+    margin: 40px 0 0 10px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 13px;
 }
+.b-form-container {
+    margin: 0 auto;
+    width: 500px;
+}
 .b-share-block {
     padding-top: 20px;
+    padding-bottom: 30px;
 }
 .b-share-block__message {
     text-align: center;
@@ -104,6 +125,7 @@ body {
 }
 .b-links__item-link {
      color: #222;
+     padding: 0 3px;
      transition: all 100ms ease-out;
      position: absolute;
      cursor: pointer;
@@ -233,7 +255,7 @@ body {
         font-size: 48px;
     }
     .b-links__item {
-        min-height: 48px;
+        min-height: 52px;
     }
     .b-links__item-description {
         font-size: 12px;
@@ -246,12 +268,16 @@ body {
     }
     .b-header-info {
         margin-top: 30px;
+        margin-bottom: 20px;
         font-size: 12px;
         padding-right: 5px;
         padding-left: 5px;
     }
     .b-header-logo {
         float: none;
+    }
+    .b-form-container {
+        width: 100%;
     }
     .b-button-ready {
         margin-top: 5px;

@@ -13,6 +13,8 @@ define([
         
         preloader: $('<div/>').css('display', 'none').appendTo('body'),
 
+        className: 'b-form-container',
+        
         events: {
         },
         
