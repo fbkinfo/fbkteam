@@ -73,7 +73,7 @@ define([
             ;
         },
 
-        onLeaveDirectionLink: function() {
+        onLeaveDirectionLink: function(event) {
             var currentElement = $(event.currentTarget);
             if (currentElement.hasClass(this.activeClassName)) {
                 return;
