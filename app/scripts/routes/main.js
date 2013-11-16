@@ -32,8 +32,6 @@ define([
             if (!_.isObject(item)) {
                 this.indexAction();
             } else {
-                window.scrollTo(0, container.offset().top);
-                
                 this.render(new FormView({
                     item : item
                 }));

@@ -19,7 +19,6 @@ define([
         },
         
         initialize: function() {
-            this.formsContainer = $(module.config()['forms-container']);
         },
 
         showForm: function(item) {

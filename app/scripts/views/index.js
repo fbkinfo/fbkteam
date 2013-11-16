@@ -90,6 +90,10 @@ define([
             return false;
         },
 
+        onClickReadyButton: function() {
+             window.scrollTo(0, this.$el.parent().offset().top);
+        },
+
         render: function() {
             this.$el.html(template({directions: repo.getAll()}));
 
