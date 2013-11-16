@@ -62,7 +62,7 @@ body {
 }
 .b-header-logo {
     float: left;
-    width: 232px;
+    width: 228px;
     position: relative;
 }
 .b-header-logo__bracket {
@@ -74,20 +74,29 @@ body {
     float: left;
 }
 .b-header-logo__bracket-right {
-    float: right;
+    float: left;
 }
 .b-header-logo__text {
-    font-size: 22px;
+    font-size: 20px;
+    font-family: 'red_ring';
+    font-weight: 700;
     text-transform: uppercase;
-    font-weight: bold;
     display: block;
-    margin: 0 28px;
-    padding-top: 36px;
+    margin: 0;
+    padding-top: 38px;
     color: #000;
+    float: left;
 }
 .b-header-logo__text:hover {
     color: #000;
     text-decoration: none;
+}
+.b-header-logo__text:focus {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    outline-offset: 0;
 }
 .b-header-info {
     display: block;
