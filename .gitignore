@@ -5,3 +5,5 @@ app/vendors
 .tmp
 test/vendors/
 nbproject/
+
+*.espressostorage
