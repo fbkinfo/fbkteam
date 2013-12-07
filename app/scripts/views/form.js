@@ -4,41 +4,49 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'tpl!templates/form.tpl',
     'jquery.writeCapture'
-], function ($, _, Backbone) {
+], function ($, _, Backbone, template) {
     'use strict';
     
     var MainView = Backbone.View.extend({
-        
-        preloader: $('<div/>').css('display', 'none').appendTo('body'),
-
+  
         className: 'b-form-container',
         
-        showForm: function(item) {
+        form: null,
+    
+        initialize: function(options) {
+            this.form = options.item;
+        },
+        
+        showForm: function() {
+            //this.$el.empty();
+            var formContainer = this.$el.find('.j-form-container');
+            var loader = this.$el.find('.j-preloader');
             var _this = this;
+
             /*jshint multistr: true */
-            $.writeCapture.autoAsync();
-            this.preloader.writeCapture().html('\
-                <script src="'+item.formUrl+'"></script>\n\
+            formContainer.writeCapture().html('\
+                <script src="'+_this.form.formUrl+'"></script>\n\
                 <script type="text/javascript">\n\
-                    _podioWebForm.render("'+item.formId+'")\n\
+                    _podioWebForm.render("'+_this.form.formId+'")\n\
                 </script>',
                 function() {
-                    _this.$el.html(_this.preloader.children());
+                    formContainer.find('iframe.podio-webform-frame').load(function() {
+                        loader.hide();
+                        formContainer.show();
+                    });
                 }
             );
         },
-
+        
         render: function() {
-            if (!_.isObject(this.options.item)) {
-                throw new Error('Dirеction item is missing');
-            }
-
-            this.showForm(this.options.item);
+            this.$el.html(template());
 
             return this;
         }
+      
     });
-
+    
     return MainView;
 });

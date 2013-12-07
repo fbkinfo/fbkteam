@@ -8,6 +8,7 @@
             <span class="b-links__item-text col-md-8"><%=directionItem.description%></span>
             <a class="b-button-ready btn btn-lg col-md-4 col-sm-4 j-ready-button <%=directionItem.buttonClass%>" href="/#form/<%=directionItem.code%>">Готов помочь</a>
         </div>
+        <div class="clearfix"></div>
     </li>
     <% }); %>
 </ul>

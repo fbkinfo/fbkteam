@@ -32,9 +32,12 @@ define([
             if (!_.isObject(item)) {
                 this.indexAction();
             } else {
-                this.render(new FormView({
+                var formView = new FormView({
                     item : item
-                }));
+                });
+                
+                this.render(formView);
+                formView.showForm();
             }
         },
         
