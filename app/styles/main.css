@@ -270,7 +270,7 @@ body {
 
 @media (min-width: 767px) {
     .b-links__item {
-        min-height: 185px;
+        min-height: 165px;
     }
     .b-links__item-link {
         min-height: 130px;
