@@ -125,7 +125,10 @@ module.exports = function (grunt) {
                 options: {
                     // `name` and `out` is set by grunt-usemin
                     baseUrl: '<%= yeoman.app %>/scripts',
-                    optimize: 'none'
+                    optimize: 'none',
+                    name: 'main',
+                    out: '<%= yeoman.dist %>/scripts/main.js',
+                    mainConfigFile: '<%= yeoman.app %>/scripts/main.js'
                 }
             }
         },
@@ -174,7 +177,7 @@ module.exports = function (grunt) {
                     removeRedundantAttributes: true,
                     useShortDoctype: true,
                     removeEmptyAttributes: true,
-                    removeOptionalTags: true*/
+                    removeOptionalTags: true*/                   
                 },
                 files: [{
                     expand: true,
@@ -198,6 +201,26 @@ module.exports = function (grunt) {
                         'styles/fonts/{,*/}*.*'
                     ]
                 }]
+            },
+        	requirejs: {
+                    src: '<%= yeoman.app %>/vendors/requirejs/require.js',
+                    dest: '<%= yeoman.dist %>/vendors/requirejs/require.js'
+                }
+        },
+        uglify: {
+            dist: {
+                files: {
+                    '<%= yeoman.dist %>/scripts/main.js': [
+                     '<%= yeoman.dist %>/scripts/main.js'
+                    ]
+                }
+            },
+            requirejs: {
+                files: {
+                    '<%= yeoman.dist %>/vendors/requirejs/require.js': [
+                        '<%= yeoman.dist %>/vendors/requirejs/require.js'
+                    ]
+                }
             }
         },
         symlink: {
