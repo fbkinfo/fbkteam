@@ -174,9 +174,12 @@ body {
 .b-links__item-description {
     font-size: 14px;
     display: none;
+    font-weight: normal;
+    font-family: arial;
 }
 .b-links__item-text {
     text-transform: none;
+    
 }
 .b-button-ready {
     color: #fff;
