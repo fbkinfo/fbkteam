@@ -5,7 +5,7 @@
         <%=directionItem.title%>
         </a>
         <div class="b-links__item-description j-direction-description">
-            <span class="b-links__item-text col-md-7"><%=directionItem.description%></span>
+            <span class="b-links__item-text col-md-7"><span><%=directionItem.description%></span></span>
             <a class="b-button-ready btn btn-lg col-md-5 col-sm-5 j-ready-button <%=directionItem.buttonClass%>" href="/#form/<%=directionItem.code%>">Готов помочь</a>
         </div>
         <div class="clearfix"></div>

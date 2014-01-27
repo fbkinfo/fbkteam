@@ -34,7 +34,7 @@ define([
                 .addClass(this.activeClassName)
                 .closest('.j-direction-block')
                 .find('.j-direction-description')
-                .show()
+                .show().css({'display':'inline-block'})
             ;
             
             this.selectedClass = item.blocksClass;
