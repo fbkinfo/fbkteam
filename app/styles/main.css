@@ -310,11 +310,43 @@ body {
     .b-links__item-description {
         font-size: 12px;
     }
+
+    .b-links__item-text {
+        float: left;
+        height: auto;
+    }
+    .b-links__item-text span {
+        top: auto;
+        margin-left: -10px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        float: left;
+        -webkit-transform: none;
+        -moz-transform:  none;
+        transform:  none;
+    }
+    .b-button-ready {
+        font-size: 17px;
+        float: left;
+        margin-left: 5px;
+    }
+    .b-links__item-link {
+        position: relative;
+    }
 }
 
 @media (max-width: 767px) {
     .b-header {
         height: auto;
+    }
+    .b-links__item-text span {
+        top: auto;
+        margin-left: 5px;
+        -webkit-transition:none;
+        -moz-transition:none;
+        margin-top: 0px;
+        float: left;
+        transition:none;
     }
     .b-header-info {
         margin-top: 30px;
@@ -337,7 +369,6 @@ body {
         margin-top: 5px;
         font-size: 12px;
         display: block;
-        float: none;
     }
     .b-links__item-text {
         padding-right: 0px;
