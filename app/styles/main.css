@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
     font-family: 'red_ring';
     src: url("fonts/redring-regular-webfont.eot");
     src: url("fonts/redring-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/redring-regular-webfont.woff") format("woff"), url("fonts/redring-regular-webfont.ttf") format("truetype");
@@ -12,10 +12,10 @@
     src: url("fonts/redring-medium-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/redring-medium-webfont.woff") format("woff"), url("fonts/redring-medium-webfont.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
-}
+}*/
 
 body, html {
-    font-family: "red_ring", sans-serif;
+    font-family: "Open sans", sans-serif;
     height: 100%;
 }
 body {
@@ -78,6 +78,7 @@ body {
     font-size: 93px;
     display: block;
     width: 26px;
+    font-family: arial;
 }
 .b-header-logo__bracket-left {
     float: left;
@@ -87,7 +88,7 @@ body {
 }
 .b-header-logo__text {
     font-size: 25px;
-    font-family: 'red_ring';
+    font-family: 'Open sans';
     font-weight: 700;
     text-transform: uppercase;
     display: block;
@@ -286,6 +287,7 @@ body {
     height: 32px;
     margin: 10px auto;
 }
+
 
 @media (min-width: 767px) {
     .b-links__item {
